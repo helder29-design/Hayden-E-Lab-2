@@ -1,0 +1,49 @@
+import random
+
+import sys
+
+# Ask user if they want to play or exit
+
+user_input = input("Press [ENTER] to play, or type anything + [ENTER] to exit: ")
+
+
+
+if user_input != "":
+
+    print("Exiting game. Goodbye!")
+
+    sys.exit()
+
+
+
+print("This is a number guessing game, it will be between 1 and 100 good luck, enter your first guess here and than keep trying until you get it!")
+
+
+
+# Generate a secret number between 1 and 100
+
+secretnumber = random.randint(1, 100)
+
+attempts = 0
+
+# Loop until the player guesses correctly
+
+while True:
+
+    guess = int(input("Enter your guess: "))
+
+    attempts += 1
+
+    if guess < secretnumber:
+
+        print("Too low! Try again.")
+
+    elif guess > secretnumber:
+
+        print("Too high! Try again.")
+
+    else:
+
+        print(f"Congratulations! You guessed it in {attempts} tries!")
+
+        break
